@@ -4,10 +4,13 @@ const express = require("express");
 const fs = require("fs");
 const fileUpload = require("express-fileupload")
 const path = require("path");
+require("dotenv").config()
 const app = express();
 const bodyParser = require("body-parser");
-var server = app.listen(process.env.PORT || 3005, () => {
-    console.log("listening to port 3005");
+
+const port = process.env.PORT || 3005
+var server = app.listen(port, () => {
+    console.log(`listening to port ${port}`);
   });
 
 
