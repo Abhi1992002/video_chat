@@ -6,8 +6,10 @@ const fileUpload = require("express-fileupload")
 const path = require("path");
 require("dotenv").config()
 const app = express();
-const bodyParser = require("body-parser");
 
+app.use(cors({
+  origin: 'https://video-discussion.netlify.app'
+}));
 const port = process.env.PORT || 3005
 var server = app.listen(port, () => {
     console.log(`listening to port ${port}`);
