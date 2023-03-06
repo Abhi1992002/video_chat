@@ -8,9 +8,7 @@ require("dotenv").config()
 const app = express();
 const cors = require("cors");
 
-app.use(cors({
-  origin: 'https://video-discussion.netlify.app'
-}));
+app.use(cors());
 const port = process.env.PORT || 3005
 var server = app.listen(port, () => {
     console.log(`listening to port ${port}`);
