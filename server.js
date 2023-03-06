@@ -6,6 +6,7 @@ const fileUpload = require("express-fileupload")
 const path = require("path");
 require("dotenv").config()
 const app = express();
+const cors = require("cors");
 
 app.use(cors({
   origin: 'https://video-discussion.netlify.app'
