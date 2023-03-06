@@ -81,6 +81,7 @@ var AppProcess = (function() {
           )
         );
         removeMediaSenders(rtp_aud_senders);
+        audio.stop()
       }
       isAudioMute = !isAudioMute;
     });
