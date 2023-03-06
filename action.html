@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="public/Assets/css/style.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <div class="home_page">
+      <nav>
+       <div class="logo">video_chat</div>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav mr-0">
+                <li class="nav-item">
+                    <button class="btn btn-outline-secondary btn-lg text-info font-weight-bold join-meeting">Join the meeting</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-secondary btn-lg btn-info text-light font-weight-bold new-meeting">Start a meeting</button>
+                </li>
+            </ul>
+        </div>
+      </nav>
+
+      <main class="main_home">
+        <div class="main_content">
+            <h1>Connect with Anyone, Anywhere</h1>
+            <p>
+                Experience seamless video calls with friends, family, and colleagues, no matter where they are in the world.
+            </p>
+            <ul>
+                <li class="input-list">
+                    <button class="btn btn-lg text-light font-weight-bold display-center new-meeting" style="background-color: #01796b;">
+                        <span class="material-icons mr-2">video_call</span>New Meeting
+                    </button>
+                </li>
+                <li>
+                    <button class="btn input-button btn-lg text-dark btn-outline-secondary font-weight-bold display-center" style="background-color: #ffffff;">
+                        <input type="text" placeholder="Enter a Code" class="enter-code" style="border: none;">
+                    </button>
+                </li>
+                <li class="text-dark join-button font-weight-bold  cursor-pointer join-action" >Join</li>
+            </ul>
+        </div>
+        <div class="lottie_animation">
+            <lottie-player class="animation" src="https://assets5.lottiefiles.com/packages/lf20_jy8vmveo.json"  background="transparent"  speed="1" loop  autoplay></lottie-player>
+
+
+        </div>
+      </main>
+
+      <footer class="containers">
+        <h6>
+          This is a fun project , if you want to see more of my work then visit
+          <span class="learn-more text-info">profile</span>
+        </h6>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(document).on('click', ".join-meeting", function(){
+                 $(".enter-code").focus(); 
+            })
+            $(document).on('click', ".join-action", function(){
+                  var join_value = $('.enter-code').val();
+                  var meetingUrl = window.location.origin+"?meetingID="+join_value;
+                  window.location.replace(meetingUrl);
+
+
+            })
+            $(document).on('click', ".new-meeting", function(){
+                  var eight_d_value = Math.floor(Math.random()*100000000);
+                  var meetingUrl = window.location.origin+"?meetingID="+eight_d_value;
+                  window.location.replace(meetingUrl);
+
+
+            })
+        })
+    </script>
+
+  </body>
+</html>
