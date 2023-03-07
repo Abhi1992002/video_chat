@@ -529,7 +529,7 @@ var MyApp = (function() {
 
   function event_process_for_signaling_server() {
     // 13.) start the client side socket
-    socket = io.connect();
+    socket = io.connect("https://video-discussion.netlify.app");
 
     // 35.) Create an sdp function to send data (my public ip address) and my connection to server via "SDP Process" event
     var SDP_function = function(data, to_connid) {
